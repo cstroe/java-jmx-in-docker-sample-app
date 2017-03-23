@@ -15,6 +15,7 @@
 	</properties>
 
     <build>
+        <finalName>sample-app</finalName>
         <plugins>
             <plugin>
                 <!-- Tell Maven to use Java 8 for our source code -->

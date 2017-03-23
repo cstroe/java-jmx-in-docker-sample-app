@@ -103,3 +103,34 @@ Here are some considerations when setting the JVM arguments:
 
    ***If this property is incorrect (or not set) all JMX connections will fail!***
 
+## Links
+
+### GitHub
+
+* [github.com/oracle/docker-images](https://github.com/oracle/docker-images/tree/master/OracleCoherence/docs/5.monitoring) - Very informative, talks about JMXMP too.
+* [github.com/nolexa/docker-jmx-demo](https://github.com/nolexa/docker-jmx-demo) - Explains the same thing as this repository.
+* [github.com/gimerstedt/jmx-to-spring-boot-in-docker](https://github.com/gimerstedt/jmx-to-spring-boot-in-docker) - Spring Boot centric
+
+### Blog Posts
+
+* [Remote Java Debugging With Docker](https://ptmccarthy.github.io/2014/07/24/remote-jmx-with-docker/)
+* [Monitoring Java Applications Running Inside Docker Containers](http://www.jamasoftware.com/blog/monitoring-java-applications/)
+* [Monitoring JVM apps in a Docker environment](http://mintbeans.com/jvm-monitoring-docker/)
+* [JMX Monitoring with Docker and the ELK Stack](https://www.ivankrizsan.se/2015/09/27/jmx-monitoring-with-the-elk-stack/)
+* [How to connect VisualVM to Docker](http://www.ethanjoachimeldridge.info/tech-blog/connect-visualvm-docker)
+
+### Forums
+
+* http://stackoverflow.com/questions/856881/how-to-activate-jmx-on-my-jvm-for-access-with-jconsole
+* https://forums.docker.com/t/enable-jmx-rmi-access-to-a-docker-container/625/5
+* http://stackoverflow.com/questions/31257968/how-to-access-jmx-interface-in-docker-from-outside
+* [Access through jmx to java application into Docker container on remote host in local network](http://serverfault.com/questions/789976/access-through-jmx-to-java-application-into-docker-container-on-remote-host-in-l) - Very concise explanation of using JMXMP
+
+### YouTube
+
+* [Using JMX to monitor an Application Server running on Docker](https://www.youtube.com/watch?v=tVL3hkA149o)
+
+### Other documentation
+
+* [confluent](http://docs.confluent.io/3.0.1/cp-docker-images/docs/operations/monitoring.html#using-jmx)
+* [Oracle Guide](https://docs.oracle.com/javase/8/docs/technotes/guides/management/agent.html)

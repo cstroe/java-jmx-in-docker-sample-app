@@ -17,7 +17,7 @@ Using [jconsole](http://openjdk.java.net/tools/svc/jconsole/) or [VisualVM](http
 
 ***Important:*** For Docker for Mac or Docker Machine users, you must set the `HOST` environment variable in `docker-compose.yml` to your Docker host IP, and use that host in the JMX client.
 
-## JVM Arguments Notes
+## Notes
 
 The goal of this configuration is to connect with a JMX/RMI client
 from outside of the Docker internal network.  

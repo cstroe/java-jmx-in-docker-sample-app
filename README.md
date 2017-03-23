@@ -118,6 +118,7 @@ Here are some considerations when setting the JVM arguments:
 * [Monitoring JVM apps in a Docker environment](http://mintbeans.com/jvm-monitoring-docker/)
 * [JMX Monitoring with Docker and the ELK Stack](https://www.ivankrizsan.se/2015/09/27/jmx-monitoring-with-the-elk-stack/)
 * [How to connect VisualVM to Docker](http://www.ethanjoachimeldridge.info/tech-blog/connect-visualvm-docker)
+* [JMX: RMI vs. JMXMP](https://meteatamel.wordpress.com/2012/02/13/jmx-rmi-vs-jmxmp/) - Outdated, but talks about why JMXMP fits better with Docker
 
 ### Forums
 

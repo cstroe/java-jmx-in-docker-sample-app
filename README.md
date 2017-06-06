@@ -21,8 +21,6 @@ This will start the application and expose port 9010 as a JMX port on the docker
 
 Using [jconsole](http://openjdk.java.net/tools/svc/jconsole/) or [VisualVM](https://visualvm.github.io/), you can connect to `localhost:9010`.
 
-***Important:*** For Docker for Mac or Docker Machine users, you must set the `HOST` environment variable in `docker-compose.yml` to your Docker host IP, and use that host in the JMX client.
-
 ## Notes
 
 The goal of this configuration is to connect with a JMX/RMI client
@@ -74,7 +72,7 @@ Here are some considerations when setting the JVM arguments:
    > Mar 23, 2017 8:56:26 AM ConnectorBootstrap startRemoteConnectorServer
    > FINEST: Starting JMX Connector Server:
    > 	com.sun.management.jmxremote.port=9010
-   > 	com.sun.management.jmxremote.host=172.18.0.2
+   > 	com.sun.management.jmxremote.host=0.0.0.0
    > 	com.sun.management.jmxremote.rmi.port=9010
    > 	com.sun.management.jmxremote.ssl=false
    > 	com.sun.management.jmxremote.registry.ssl=false
@@ -85,7 +83,7 @@ Here are some considerations when setting the JVM arguments:
    > 	com.sun.management.jmxremote.authenticate=false
    > 	No Authentication
    > Mar 23, 2017 8:56:26 AM ConnectorBootstrap startRemoteConnectorServer
-   > CONFIG: JMX Connector ready at: service:jmx:rmi:///jndi/rmi://172.18.0.2:9010/jmxrmi
+   > CONFIG: JMX Connector ready at: service:jmx:rmi:///jndi/rmi://0.0.0.0:9010/jmxrmi
    
    This is useful for debugging purposes.
 

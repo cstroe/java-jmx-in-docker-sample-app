@@ -10,6 +10,8 @@ We get around these limitations with careful configuration of the JMX properties
 * set `com.sun.management.jmxremote.port` and `com.sun.management.jmxremote.rmi.port` to the exposed port, in our case `9010`, and
 * set `com.sun.management.jmxremote.host` and `java.rmi.server.hostname` to the [catch-all IP address](https://en.wikipedia.org/wiki/0.0.0.0) `0.0.0.0`.
 
+TL;DR -- [entrypoint.sh](https://github.com/cstroe/java-jmx-in-docker-sample-app/blob/master/bin/entrypoint.sh)
+
 ## Usage
 
     ./mvnw package

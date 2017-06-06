@@ -1,7 +1,7 @@
 FROM openjdk:8-jdk
 
 # to check for open ports in the container: docker run <container id> netstat -tan
-RUN apt update && apt install net-tools
+#RUN apt update && apt install net-tools
 
 RUN mkdir -p /opt/app
 

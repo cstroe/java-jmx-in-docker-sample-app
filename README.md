@@ -4,7 +4,7 @@ The purpose of this project is to present the configuration settings required to
 
 Docker requires ports to be declared before the application runs.  This conflicts with JMX over RMI (the default JMX protocol), which relies on establishing communication using random ports negotiated at connection time.  The randomly negotiated JMX ports can't be declared in the Docker config, causing JMX connections to fail.
 
-If connecting from another container linked to the JVM container then all ports will be acessible, including the randomly negotiated ones.  However, the usual use case for JMX monitoring is to connect from outside the docker network.
+If connecting from another container linked to the JVM container (same Docker network) then all ports will be accessible, including the randomly negotiated ones.  However, the usual use case for JMX monitoring is to connect from outside the docker network.
 
 We get around these limitations with careful configuration of the JMX properties.  The main tricks:
 * set `com.sun.management.jmxremote.port` and `com.sun.management.jmxremote.rmi.port` to the exposed port, in our case `9010`, and

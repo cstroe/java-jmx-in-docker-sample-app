@@ -5,6 +5,3 @@ services:
     ports:
       - "9010:9010"
       - "5005:5005"
-    # Required for Docker for Mac or Docker Machine users
-    #environment:
-    #  HOST: <Docker host ip>

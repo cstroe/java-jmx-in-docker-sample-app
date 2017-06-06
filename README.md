@@ -2,9 +2,13 @@
 
 The purpose of this project is to present the configuration settings required to expose a JMX port from a JVM running inside a Docker container.
 
-Docker requires ports to be declared before the application runs.  This conflicts with JMX over RMI (the default JMX protocol), which relies on establishing communication using random ports negotiated at connection time.  As these random ports won't be declared in the Docker config, JMX connections will fail because Docker won't dynamically open them.
+Docker requires ports to be declared before the application runs.  This conflicts with JMX over RMI (the default JMX protocol), which relies on establishing communication using random ports negotiated at connection time.  The randomly negotiated JMX ports can't be declared in the Docker config, causing JMX connections to fail.
 
-If connecting from another container linked to the JVM container then careful selection of the JVM settings is not required as all ports will be accessible, including the randomly negotiated ones.
+If connecting from another container linked to the JVM container then all ports will be acessible, including the randomly negotiated ones.  However, the usual use case for JMX monitoring is to connect from outside the docker network.
+
+We get around these limitations with careful configuration of the JMX properties.  The main tricks:
+* set `com.sun.management.jmxremote.port` and `com.sun.management.jmxremote.rmi.port` to the exposed port, in our case `9010`, and
+* set `com.sun.management.jmxremote.host` and `java.rmi.server.hostname` to the [catch-all IP address](https://en.wikipedia.org/wiki/0.0.0.0) `0.0.0.0`.
 
 ## Usage
 
@@ -33,8 +37,8 @@ Here are some considerations when setting the JVM arguments:
    They don't have to be the same, but you have to expose one
    extra port if they're not equal.
 
-   If you don't declare the RMI port, the RMI protocol will choose
-   a random port at connection time after the initial handshake.
+   If you _don't_ declare the RMI port, the RMI protocol will choose
+   a ***random port*** at connection time after the initial handshake.
    This will cause the JMX client to hang as the port will not
    be externally accessible.
 
@@ -57,6 +61,8 @@ Here are some considerations when setting the JVM arguments:
    will get this error at JVM startup:
 
    > Error: Exception thrown by the agent : java.net.MalformedURLException: Cannot give port number without host name
+
+   In our case, we set the host to `0.0.0.0` for the JVM to listen on any available interface.
 
 3. `java.util.logging.config.file`
 
@@ -96,12 +102,17 @@ Here are some considerations when setting the JVM arguments:
 
 5. `java.rmi.server.hostname`
 
-   This is an optional but critical property when using JMX with
-   a JVM running inside a Docker container.  It should be set to
+   This is a critical property when using JMX with a JVM running 
+   inside a Docker container.  It should be set to
    the externally accessible hostname or IP of the Docker container,
    same as `com.sun.management.jmxremote.host`.
 
    ***If this property is incorrect (or not set) all JMX connections will fail!***
+
+   In our case, we use the catch-all IP `0.0.0.0` to have the JVM
+   listen on any available address.  This avoids us having to specify
+   the host IP of the Docker machine, and requires no further special
+   configuration.
 
 ## Links
 

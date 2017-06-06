@@ -1,12 +1,8 @@
 #!/usr/bin/env bash
+set -x
 
 JMX_PORT=9010
-
-if [ -z "$HOST" ]; then
-  HOST=$(hostname -i)
-fi
-
-set -x
+HOST="0.0.0.0"
 
 java \
   -Dcom.sun.management.config.file=/opt/app/management.properties \

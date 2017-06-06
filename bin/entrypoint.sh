@@ -5,8 +5,12 @@ JMX_PORT=9010
 HOST="0.0.0.0"
 
 java \
-  -Dcom.sun.management.config.file=/opt/app/management.properties \
-  -Djava.util.logging.config.file=/opt/app/logging.properties \
+  -Dsun.management.jmxremote.level=FINEST \
+  -Dsun.management.jmxremote.handlers=java.util.logging.ConsoleHandler \
+  -Djava.util.logging.ConsoleHandler.level=FINEST \
+  -Dcom.sun.management.jmxremote.local.only=false \
+  -Dcom.sun.management.jmxremote.ssl=false \
+  -Dcom.sun.management.jmxremote.authenticate=false \
   -Dcom.sun.management.jmxremote.port=$JMX_PORT \
   -Dcom.sun.management.jmxremote.rmi.port=$JMX_PORT \
   -Dcom.sun.management.jmxremote.host=$HOST \

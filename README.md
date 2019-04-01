@@ -133,10 +133,16 @@ Here are some considerations when setting the JVM arguments:
 
 ### Forums
 
-* http://stackoverflow.com/questions/856881/how-to-activate-jmx-on-my-jvm-for-access-with-jconsole
 * https://forums.docker.com/t/enable-jmx-rmi-access-to-a-docker-container/625/5
+
+### StackOverflow
+
+* http://stackoverflow.com/questions/856881/how-to-activate-jmx-on-my-jvm-for-access-with-jconsole
 * http://stackoverflow.com/questions/31257968/how-to-access-jmx-interface-in-docker-from-outside
 * [Access through jmx to java application into Docker container on remote host in local network](http://serverfault.com/questions/789976/access-through-jmx-to-java-application-into-docker-container-on-remote-host-in-l) - Very concise explanation of using JMXMP
+* [multiple app nodes how to expose jmx in kubernetes?](https://stackoverflow.com/questions/35184558/multiple-app-nodes-how-to-expose-jmx-in-kubernetes/39927197#39927197)
+* [Profiling Java application in kubernetes](https://stackoverflow.com/questions/41720185/profiling-java-application-in-kubernetes?noredirect=1&lq=1)
+* [JConsole over ssh local port forwarding](https://stackoverflow.com/questions/15093376/jconsole-over-ssh-local-port-forwarding)
 
 ### YouTube
 

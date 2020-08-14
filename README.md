@@ -4,7 +4,7 @@ The purpose of this project is to present the configuration settings required to
 
 Docker requires ports to be declared before the application runs.  This conflicts with JMX over RMI (the default JMX protocol), which relies on establishing communication using random ports negotiated at connection time.  The randomly negotiated JMX ports can't be declared in the Docker config, causing JMX connections to fail.
 
-If connecting from another container linked to the JVM container (same Docker network) then all ports will be accessible, including the randomly negotiated ones.  However, the typical use case for JMX monitoring is to connect from outside the docker network.
+If connecting from another container linked to the JVM container (same Docker network) then all ports will be accessible, including the randomly negotiated ones.  However, the typical use case for JMX monitoring is to connect from outside the docker network (via mapping to a host port).
 
 We get around these limitations with careful configuration of the JMX properties.  The main tricks:
 * set `com.sun.management.jmxremote.port` and `com.sun.management.jmxremote.rmi.port` to the exposed port, in our case `9010`, and
@@ -24,7 +24,8 @@ Using [jconsole](http://openjdk.java.net/tools/svc/jconsole/) or [VisualVM](http
 ## Notes
 
 The goal of this configuration is to connect with a JMX/RMI client
-from outside of the Docker internal network.  
+from outside of the Docker internal network, usually via a port
+mapped to a host port. 
 
 The RMI transport is included with the JVM, and therefore is supported
 by all the JMX clients (JConsole, VisualVM, etc).
@@ -66,8 +67,10 @@ Here are some considerations when setting the JVM arguments:
 
 3. `java.util.logging.config.file`
 
-   The optional `logging.properties` file configures the Java Logging
-   framework to print RMI debugging messages.  Example:
+   The optional path to a [logging.properties](bin/logging.properties) file
+   that configures the Java Logging framework to print RMI debugging messages.
+
+   Example logging output:
 
    > Mar 23, 2017 8:56:26 AM ConnectorBootstrap startRemoteConnectorServer
    > FINEST: Starting JMX Connector Server:
@@ -85,20 +88,22 @@ Here are some considerations when setting the JVM arguments:
    > Mar 23, 2017 8:56:26 AM ConnectorBootstrap startRemoteConnectorServer
    > CONFIG: JMX Connector ready at: service:jmx:rmi:///jndi/rmi://0.0.0.0:9010/jmxrmi
    
-   This is useful for debugging purposes.
+   JMX logging configuration happens early in the JVM startup and
+   uses the Java Logging framework.  This logging is useful for debugging purposes.
 
 4. `com.sun.management.config.file`
 
-   This file is read in by ConnectorBootstrap at startup time
+   This optional configuration option points to a file that
+   is read in by ConnectorBootstrap at startup time
    to set `com.sun.management.jmxremote.*` properties.
    However, since no environment variable substitution is done
    any properties that must be set via environment variables
    cannot be specified in that file, and must be passed from this
    shell script (see below).
    
-   This is optional.  The properties in the `management.properties` 
+   The properties in the [management.properties](bin/management.properties)
    file can be passed directly to the JVM as command line arguments.
-   See `entrypoint.sh`.
+   See [entrypoint.sh](bin/entrypoint.sh).
 
 5. `java.rmi.server.hostname`
 

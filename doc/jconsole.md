@@ -1,4 +1,4 @@
-# Using jconsole to connect to an application via JMX
+# Using JConsole to connect to an application via JMX
 
 NOTE: These instructions are for a \*nix operating system (Linux, \*BSD, etc...).
 

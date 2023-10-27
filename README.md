@@ -123,9 +123,11 @@ Here are some considerations when setting the JVM arguments:
 
 ### GitHub
 
-* [github.com/oracle/docker-images](https://github.com/oracle/docker-images/tree/master/OracleCoherence/docs/5.monitoring) - Very informative, talks about JMXMP too.
-* [github.com/nolexa/docker-jmx-demo](https://github.com/nolexa/docker-jmx-demo) - Explains the same thing as this repository.
-* [github.com/gimerstedt/jmx-to-spring-boot-in-docker](https://github.com/gimerstedt/jmx-to-spring-boot-in-docker) - Spring Boot centric
+* [oracle/docker-images](https://github.com/oracle/docker-images/tree/master/OracleCoherence/docs/5.monitoring) - Very informative, talks about JMXMP too.
+* [nolexa/docker-jmx-demo](https://github.com/nolexa/docker-jmx-demo) - Explains the same thing as this repository.
+* [gimerstedt/jmx-to-spring-boot-in-docker](https://github.com/gimerstedt/jmx-to-spring-boot-in-docker) - Spring Boot centric
+* [zacker330/Java-JMX-example](https://github.com/zacker330/Java-JMX-example) - adds simple authentication, Jolokia agent
+* [jolokia/jolokia](https://github.com/jolokia/jolokia) - a JVM agent that uses JSON over HTTP, instead of RMI, has other [features](https://jolokia.org/features-nb.html)
 
 ### Blog Posts
 

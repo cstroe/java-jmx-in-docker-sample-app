@@ -43,3 +43,7 @@ JConsole will warn you about the insecure connection.  Just click the "Insecure 
 Finally, at this point JConsole will start reading JVM metrics over JMX.  On the main screen you can see memory, threads, classes, and CPU usage:
 
 ![Screenshot of the default graphs shown by jconsole after connecting to a running JVM process, including memory, threads, classes, and CPU usage.](images/jconsole_04_graph.png)
+
+## Links
+
+* More info about JConsole: [OpenJDK JConsole](http://openjdk.java.net/tools/svc/jconsole/)

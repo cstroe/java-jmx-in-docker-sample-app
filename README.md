@@ -129,6 +129,7 @@ Here are some considerations when setting the JVM arguments:
 
 ### Blog Posts
 
+* [JMX Ports (Baeldung)](https://www.baeldung.com/jmx-ports) - for local apps not Docker, also describes `-XX:+DisableAttachMechanism` and `com.sun.management.jmxremote`
 * [Remote Java Debugging With Docker](https://ptmccarthy.github.io/2014/07/24/remote-jmx-with-docker/)
 * [Monitoring Java Applications Running Inside Docker Containers](http://www.jamasoftware.com/blog/monitoring-java-applications/)
 * [Monitoring JVM apps in a Docker environment](http://mintbeans.com/jvm-monitoring-docker/)

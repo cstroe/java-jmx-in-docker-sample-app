@@ -1,6 +1,6 @@
 # Using JConsole to connect to an application via JMX
 
-NOTE: These instructions are for a \*nix operating system (Linux, \*BSD, etc...).
+NOTE: The shell commands are for a \*nix operating system (Linux, \*BSD, etc...).  The GUI steps should be the same for all operating systems.
 
 ## Installation
 

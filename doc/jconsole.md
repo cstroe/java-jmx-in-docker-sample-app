@@ -30,11 +30,12 @@ This will bring up the initial jconsole window:
 
 ![Screenshot of the window shown when jconsole initially starts.  A panel titled "JConsole: New Connection" is shown.](images/jconsole_01_start.png)
 
-Click into the "Remote Process" field and enter the address of your JMX port, in our case `localhost:9010`:
+Click into the "Remote Process" field and enter the address of your JMX port, in our case `localhost:9010`.
+Since we have not setup any authentication, we don't need to enter a username or password.
+Then click the "Connect" button to start the connection.
 
 ![Screenshot of entering the remote address in the JConsole New Connection panel.](images/jconsole_02_address.png)
 
-Since we have not setup any authentication, we don't need to enter a username or password.  Click the "Connect" button.
 
 JConsole will warn you about the insecure connection.  Just click the "Insecure connection" button to proceed.
 

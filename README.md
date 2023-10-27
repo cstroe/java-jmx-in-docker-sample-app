@@ -17,7 +17,7 @@ TL;DR -- [entrypoint.sh](https://github.com/cstroe/java-jmx-in-docker-sample-app
     ./mvnw package
     docker-compose up --build
 
-This will start the application and expose port 9010 as a JMX port on the docker host.
+[Docker Compose](https://docs.docker.com/compose/install/) will start the application and expose port 9010 as a JMX port on the docker host.
 
 Using [jconsole](http://openjdk.java.net/tools/svc/jconsole/) or [VisualVM](https://visualvm.github.io/), you can connect to `localhost:9010`.
 

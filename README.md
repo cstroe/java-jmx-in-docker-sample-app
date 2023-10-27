@@ -128,6 +128,7 @@ Here are some considerations when setting the JVM arguments:
 * [gimerstedt/jmx-to-spring-boot-in-docker](https://github.com/gimerstedt/jmx-to-spring-boot-in-docker) - Spring Boot centric
 * [zacker330/Java-JMX-example](https://github.com/zacker330/Java-JMX-example) - adds simple authentication, Jolokia agent
 * [jolokia/jolokia](https://github.com/jolokia/jolokia) - a JVM agent that uses JSON over HTTP, instead of RMI, has other [features](https://jolokia.org/features-nb.html)
+* [prometheus/jmx\_exporter](https://github.com/prometheus/jmx_exporter) - a JVM agent that exposes JMX metrics for [Prometheus](https://github.com/prometheus/prometheus)
 
 ### Blog Posts
 

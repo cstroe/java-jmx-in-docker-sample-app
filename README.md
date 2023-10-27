@@ -144,8 +144,8 @@ Here are some considerations when setting the JVM arguments:
 ### StackOverflow
 
 * [Why Java opens 3 ports when JMX is configured?](https://stackoverflow.com/questions/20884353/why-java-opens-3-ports-when-jmx-is-configured)
-* http://stackoverflow.com/questions/856881/how-to-activate-jmx-on-my-jvm-for-access-with-jconsole
-* http://stackoverflow.com/questions/31257968/how-to-access-jmx-interface-in-docker-from-outside
+* [How to activate JMX on my JVM for access with jconsole?](http://stackoverflow.com/questions/856881/how-to-activate-jmx-on-my-jvm-for-access-with-jconsole)
+* [How to access JMX interface in docker from outside?](http://stackoverflow.com/questions/31257968/how-to-access-jmx-interface-in-docker-from-outside)
 * [Access through jmx to java application into Docker container on remote host in local network](http://serverfault.com/questions/789976/access-through-jmx-to-java-application-into-docker-container-on-remote-host-in-l) - Very concise explanation of using JMXMP
 * [multiple app nodes how to expose jmx in kubernetes?](https://stackoverflow.com/questions/35184558/multiple-app-nodes-how-to-expose-jmx-in-kubernetes/39927197#39927197)
 * [Profiling Java application in kubernetes](https://stackoverflow.com/questions/41720185/profiling-java-application-in-kubernetes?noredirect=1&lq=1)

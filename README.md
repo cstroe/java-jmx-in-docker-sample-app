@@ -157,7 +157,7 @@ Here are some considerations when setting the JVM arguments:
 
 ### YouTube
 
-* [Using JMX to monitor an Application Server running on Docker](https://www.youtube.com/watch?v=tVL3hkA149o)
+* [Using JMX to monitor an Application Server running on Docker](https://www.youtube.com/watch?v=tVL3hkA149o) - This video sets `java.rmi.server.hostname` to the Docker host IP address, which is not what we recommend in this repo.  It's also using some specific Dell JMX web interface.  Consider removing this link.
 
 ### Other documentation
 
